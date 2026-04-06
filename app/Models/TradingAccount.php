@@ -20,6 +20,7 @@ class TradingAccount extends Model
         'equity',
         'margin',
         'free_margin',
+        'risk_percentage',
         'account_type',
         'status',
         'is_copy_trading_enabled',
@@ -30,6 +31,7 @@ class TradingAccount extends Model
         'equity' => 'decimal:2',
         'margin' => 'decimal:2',
         'free_margin' => 'decimal:2',
+        'risk_percentage' => 'decimal:2',
         'is_copy_trading_enabled' => 'boolean',
     ];
 

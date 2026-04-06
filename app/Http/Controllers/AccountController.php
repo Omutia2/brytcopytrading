@@ -30,6 +30,9 @@ class AccountController extends Controller
             'server_name' => 'required|string|max:100',
             'password' => 'required|string|max:100',
             'account_type' => 'required|in:LIVE,DEMO',
+            'balance' => 'required|numeric|min:0',
+            'equity' => 'nullable|numeric|min:0',
+            'risk_percentage' => 'required|numeric|min:1|max:200',
             'master_account_id' => 'nullable|exists:master_accounts,id',
         ]);
 
@@ -43,6 +46,9 @@ class AccountController extends Controller
         $account->server = $request->server_name;
         $account->password = $request->password;
         $account->account_type = $request->account_type;
+        $account->balance = $request->balance;
+        $account->equity = $request->equity;
+        $account->risk_percentage = $request->risk_percentage;
         $account->save();
 
         return redirect()->route('account.index')
@@ -57,6 +63,9 @@ class AccountController extends Controller
             'server_name' => 'required|string|max:100',
             'password' => 'required|string|max:100',
             'account_type' => 'required|in:LIVE,DEMO',
+            'balance' => 'required|numeric|min:0',
+            'equity' => 'nullable|numeric|min:0',
+            'risk_percentage' => 'required|numeric|min:1|max:200',
             'master_account_id' => 'nullable|exists:master_accounts,id',
         ]);
 
@@ -67,6 +76,9 @@ class AccountController extends Controller
             'server' => $request->server_name,
             'password' => $request->password,
             'account_type' => $request->account_type,
+            'balance' => $request->balance,
+            'equity' => $request->equity,
+            'risk_percentage' => $request->risk_percentage,
             'master_account_id' => $request->master_account_id,
         ]);
 

@@ -91,6 +91,10 @@
                                     {{ $account->is_copy_trading_enabled ? 'Enabled' : 'Disabled' }}
                                 </span>
                                 </div>
+                                <div class="flex justify-between">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Risk Level:</span>
+                                    <span class="text-sm font-medium text-gray-900 dark:text-white">{{ number_format($account->risk_percentage, 1) }}%</span>
+                                </div>
                                 @if($account->master_account_id && $account->masterAccount)
                                     <div class="flex justify-between">
                                         <span class="text-sm text-gray-600 dark:text-gray-400">Master Account:</span>
@@ -174,6 +178,24 @@
                 </div>
                 
                 <div>
+                    <label for="risk_percentage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Percentage (%)</label>
+                    <input type="number" id="risk_percentage" name="risk_percentage" min="1" max="200" step="0.1" value="100" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Percentage of your account balance to risk per trade (100% = full balance, 50% = half balance, 25% = quarter balance)</p>
+                </div>
+                
+                <div>
+                    <label for="balance" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance</label>
+                    <input type="number" id="balance" name="balance" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Initial balance for risk calculations</p>
+                </div>
+
+                <div>
+                    <label for="equity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Equity</label>
+                    <input type="number" id="equity" name="equity" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Current equity for risk calculations</p>
+                </div>
+                
+                <div>
                     <label for="master_account_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Master Account (Optional)</label>
                     <select id="master_account_id" name="master_account_id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
                         <option value="">Select a master account to copy trades from</option>
@@ -245,6 +267,24 @@
                 </div>
                 
                 <div>
+                    <label for="edit_risk_percentage" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Risk Percentage (%)</label>
+                    <input type="number" id="edit_risk_percentage" name="risk_percentage" min="1" max="200" step="0.1" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Percentage of your account balance to risk per trade (e.g., 100% = full balance, 50% = half balance)</p>
+                </div>
+                
+                <div>
+                    <label for="edit_balance" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Balance</label>
+                    <input type="number" id="edit_balance" name="balance" min="0" step="0.01" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Your available balance for copy trading calculations</p>
+                </div>
+                
+                <div>
+                    <label for="edit_equity" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Account Equity (Optional)</label>
+                    <input type="number" id="edit_equity" name="equity" min="0" step="0.01" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Your available equity for margin and risk calculations (leave blank if same as balance)</p>
+                </div>
+                
+                <div>
                     <label for="edit_master_account_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Master Account (Optional)</label>
                     <select id="edit_master_account_id" name="master_account_id" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
                         <option value="">Select a master account to copy trades from</option>
@@ -283,6 +323,9 @@ function editAccount(accountId) {
         document.getElementById('edit_server').value = account.server;
         document.getElementById('edit_password').value = account.password || '';
         document.getElementById('edit_account_type').value = account.account_type;
+        document.getElementById('edit_balance').value = account.balance || '';
+        document.getElementById('edit_equity').value = account.equity || '';
+        document.getElementById('edit_risk_percentage').value = account.risk_percentage || 100;
         document.getElementById('edit_master_account_id').value = account.master_account_id || '';
         
         // Set the form action using Laravel route

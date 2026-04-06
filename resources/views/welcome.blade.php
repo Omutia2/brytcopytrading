@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrytCopyTrader - Copy Professional Trades Automatically</title>
+    <title>BrytCopyTrading - Copy Professional Trades Automatically</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,7 +56,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
-                        <span class="text-xl font-bold text-gray-900 dark:text-white">BrytCopyTrader</span>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">BrytCopyTrading</span>
                     </div>
                 </div>
 
@@ -154,7 +154,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                    Why Choose <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">BrytCopy</span>?
+                    Why Choose <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">BrytCopyTradin</span>?
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
                     Professional copy trading with <span class="text-yellow-600 dark:text-yellow-400 font-semibold">advanced features and seamless integration</span>
@@ -965,7 +965,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">BrytCopyTrader</span>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">BrytCopyTrading</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Professional copy trading platform with <span class="text-yellow-600 dark:text-yellow-400">AI-powered automation</span> for maximum returns.
@@ -997,7 +997,7 @@
                 </div>
 
                 <!-- Product -->
-                <div>
+                {{-- <div>
                     <h4 class="text-gray-900 dark:text-white font-semibold mb-6">Product</h4>
                     <ul class="space-y-3">
                         <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Features</a></li>
@@ -1030,14 +1030,14 @@
                         <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
                         <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Status Page</a></li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Bottom Bar -->
             <div class="border-t border-gray-200 dark:border-gray-800 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
-                        © {{date('Y')}} BrytCopy. All rights reserved.
+                        © {{date('Y')}} BrytCopyTrading. All rights reserved.
                     </div>
                     <div class="flex items-center space-x-6 text-gray-600 dark:text-gray-400">
                         <div class="flex items-center space-x-2">

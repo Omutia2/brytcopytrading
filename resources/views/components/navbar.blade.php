@@ -9,8 +9,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                         </svg>
                     </div>
-                    <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white hidden sm:block">BrytCopy</span>
-                    <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white block sm:hidden">BC</span>
+                    <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white hidden sm:block">BrytCopyTrading</span>
+                    <span class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white block sm:hidden">BCT</span>
                 </a>
             </div>
 

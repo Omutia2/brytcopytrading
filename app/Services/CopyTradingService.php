@@ -73,34 +73,34 @@ class CopyTradingService
      */
     private function calculateLotSize(TradingAccount $account, MasterAccount $masterAccount, Trade $masterTrade)
     {
-        // Use equity if available, otherwise use balance
-        $accountValue = $account->equity ?? $account->balance;
-        $masterValue = $masterAccount->equity ?? $masterAccount->balance;
+        // Calculate lot size based on user's risk percentage of their own account balance
+        $accountBalance = $account->equity ?? $account->balance;
         
-        // Calculate risk ratio based on account values
-        $riskRatio = $accountValue / $masterValue;
+        // Calculate lot size based on user's risk percentage
+        // User's risk percentage determines what percentage of their account balance to risk
+        $userRiskAmount = $accountBalance * ($account->risk_percentage / 100);
         
-        // Calculate proportional lot size
-        $proportionalLotSize = $masterTrade->lot_size * $riskRatio;
+        // Convert user's risk amount to lot size (standard lot = $100,000)
+        $lotSizeFromRisk = $userRiskAmount / 100000;
         
         // Apply master account's copy limits
         $minLotSize = max(0.01, $masterAccount->min_copy_amount / 10000); // Convert amount to minimum lot size
         $maxLotSize = $masterAccount->max_copy_amount / 10000; // Convert amount to maximum lot size
         
         // Ensure lot size is within bounds
-        $adjustedLotSize = max($minLotSize, min($proportionalLotSize, $maxLotSize));
+        $finalLotSize = max($minLotSize, min($lotSizeFromRisk, $maxLotSize));
         
         // Round to appropriate precision
-        $roundedLotSize = $this->roundLotSize($adjustedLotSize);
+        $roundedLotSize = $this->roundLotSize($finalLotSize);
         
-        Log::info("Lot size calculated", [
+        Log::info("Lot size calculated using user risk percentage", [
             'account_id' => $account->id,
-            'account_value' => $accountValue,
-            'master_value' => $masterValue,
-            'risk_ratio' => $riskRatio,
-            'master_lot_size' => $masterTrade->lot_size,
-            'calculated_lot_size' => $proportionalLotSize,
-            'final_lot_size' => $roundedLotSize
+            'account_balance' => $accountBalance,
+            'risk_percentage' => $account->risk_percentage,
+            'user_risk_amount' => $userRiskAmount,
+            'calculated_lot_size' => $lotSizeFromRisk,
+            'final_lot_size' => $roundedLotSize,
+            'master_lot_size' => $masterTrade->lot_size
         ]);
         
         return $roundedLotSize;
