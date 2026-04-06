@@ -1,0 +1,85 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\MasterAccount;
+use App\Models\TradingAccount;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
+class AccountController extends Controller
+{
+    public function index()
+    {
+        $tradingAccounts = TradingAccount::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->get();
+        $masterAccounts = MasterAccount::where('is_public', true)->where('status', 'ACTIVE')->get();
+        return view('account.index', compact('tradingAccounts', 'masterAccounts'));
+    }
+
+    public function show($id)
+    {
+        $account = TradingAccount::where('user_id', Auth::user()->id)->findOrFail($id);
+        return response()->json($account);
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'broker_name' => 'required|string|max:100',
+            'account_number' => 'required|string|max:50',
+            'server_name' => 'required|string|max:100',
+            'password' => 'required|string|max:100',
+            'account_type' => 'required|in:LIVE,DEMO',
+            'master_account_id' => 'nullable|exists:master_accounts,id',
+        ]);
+
+        // dd($request->all());
+
+        $account = new TradingAccount();
+        $account->user_id = Auth::user()->id;
+        $account->master_account_id = $request->master_account_id;
+        $account->broker_name = $request->broker_name;
+        $account->account_number = $request->account_number;
+        $account->server = $request->server_name;
+        $account->password = $request->password;
+        $account->account_type = $request->account_type;
+        $account->save();
+
+        return redirect()->route('account.index')
+            ->with('success', 'Trading account added successfully!');
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'broker_name' => 'required|string|max:100',
+            'account_number' => 'required|string|max:50',
+            'server_name' => 'required|string|max:100',
+            'password' => 'required|string|max:100',
+            'account_type' => 'required|in:LIVE,DEMO',
+            'master_account_id' => 'nullable|exists:master_accounts,id',
+        ]);
+
+        $account = TradingAccount::where('user_id', Auth::user()->id)->findOrFail($id);
+        $account->update([
+            'broker_name' => $request->broker_name,
+            'account_number' => $request->account_number,
+            'server' => $request->server_name,
+            'password' => $request->password,
+            'account_type' => $request->account_type,
+            'master_account_id' => $request->master_account_id,
+        ]);
+
+        return redirect()->route('account.index')
+            ->with('success', 'Trading account updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $account = TradingAccount::where('user_id', Auth::user()->id)->findOrFail($id);
+        $account->delete();
+
+        return redirect()->route('account.index')
+            ->with('success', 'Trading account deleted successfully!');
+    }
+}
