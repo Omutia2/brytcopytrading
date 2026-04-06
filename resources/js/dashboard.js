@@ -1,5 +1,6 @@
 // Dashboard JavaScript functionality
-import Chart from 'chart.js';
+// import Chart from 'chart.js';
+import { Chart } from 'chart.js/auto';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize performance chart
