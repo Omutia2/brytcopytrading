@@ -49,6 +49,8 @@ class AccountController extends Controller
         $account->balance = $request->balance;
         $account->equity = $request->equity;
         $account->risk_percentage = $request->risk_percentage;
+        $account->status = 'PENDING'; // New accounts start as pending
+        $account->is_copy_trading_enabled = false; // Disabled until approved
         $account->save();
 
         return redirect()->route('account.index')

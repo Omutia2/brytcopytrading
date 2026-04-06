@@ -50,9 +50,17 @@
                                 ${{ number_format($account->balance, 2) }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
-                                <span class="px-2 py-1 text-xs font-semibold rounded-full {{ $account->status === 'ACTIVE' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' }}">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full 
+                                    {{ $account->status === 'ACTIVE' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                                       ($account->status === 'PENDING' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' : 
+                                       'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200') }}">
                                     {{ $account->status }}
                                 </span>
+                                @if($account->status === 'PENDING' && $account->approved_at)
+                                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                        Pending since {{ $account->created_at->format('M j, Y H:i') }}
+                                    </div>
+                                @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="px-2 py-1 text-xs font-semibold rounded-full {{ $account->is_copy_trading_enabled ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200' }}">
@@ -66,6 +74,19 @@
                                 <a href="{{ route('admin.trading-accounts.show', $account) }}" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 mr-3">
                                     View
                                 </a>
+                                
+                                @if($account->status === 'PENDING')
+                                    <form action="{{ route('admin.trading-accounts.approve', $account) }}" method="POST" class="inline mr-2" onsubmit="return confirm('Are you sure you want to approve this trading account?')">
+                                        @csrf
+                                        <button type="submit" class="text-green-600 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300">
+                                            Approve
+                                        </button>
+                                    </form>
+                                    <button onclick="showRejectModal({{ $account->id }})" class="text-red-600 hover:text-red-900 dark:text-red-400 dark:hover:text-red-300 mr-2">
+                                        Reject
+                                    </button>
+                                @endif
+                                
                                 <form action="{{ route('admin.trading-accounts.destroy', $account) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this trading account?')">
                                     @csrf
                                     @method('DELETE')
@@ -99,4 +120,53 @@
             </div>
         @endif
     </div>
+
+    <!-- Reject Modal -->
+    <div id="rejectModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white dark:bg-gray-800">
+            <div class="mt-3">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Reject Trading Account</h3>
+                <form id="rejectForm" action="#" method="POST">
+                    @csrf
+                    <input type="hidden" id="rejectAccountId" name="account_id">
+                    
+                    <div class="mb-4">
+                        <label for="rejection_reason" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rejection Reason</label>
+                        <textarea id="rejection_reason" name="rejection_reason" rows="3" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white" placeholder="Please provide a reason for rejection..."></textarea>
+                    </div>
+                    
+                    <div class="flex space-x-3">
+                        <button type="button" onclick="hideRejectModal()" class="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 px-4 py-2 rounded-lg font-medium transition-colors">
+                            Cancel
+                        </button>
+                        <button type="submit" class="flex-1 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                            Reject Account
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function showRejectModal(accountId) {
+        document.getElementById('rejectAccountId').value = accountId;
+        document.getElementById('rejectModal').classList.remove('hidden');
+    }
+    
+    function hideRejectModal() {
+        document.getElementById('rejectModal').classList.add('hidden');
+        document.getElementById('rejectForm').reset();
+    }
+    
+    // Set form action when modal is shown
+    document.addEventListener('DOMContentLoaded', function() {
+        const rejectForm = document.getElementById('rejectForm');
+        const accountIdInput = document.getElementById('rejectAccountId');
+        
+        accountIdInput.addEventListener('change', function() {
+            rejectForm.action = '/admin/trading-accounts/' + this.value + '/reject';
+        });
+    });
+    </script>
 @endsection

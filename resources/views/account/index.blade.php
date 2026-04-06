@@ -63,9 +63,17 @@
                                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $account->broker_name }}</h3>
                                     <p class="text-sm text-gray-500 dark:text-gray-400">{{ $account->account_type }}</p>
                                 </div>
-                                <span class="px-2 py-1 text-xs font-semibold rounded-full {{ $account->status === 'ACTIVE' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200' }}">
+                                <span class="px-2 py-1 text-xs font-semibold rounded-full 
+                                    {{ $account->status === 'ACTIVE' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 
+                                       ($account->status === 'PENDING' ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200' : 
+                                       'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200') }}">
                                     {{ $account->status }}
                                 </span>
+                                @if($account->status === 'PENDING')
+                                    <div class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                        Awaiting admin approval
+                                    </div>
+                                @endif
                             </div>
                             
                             <div class="space-y-3">

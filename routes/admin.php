@@ -56,6 +56,10 @@ Route::prefix('admin')->group(function () {
         Route::put('/trading-accounts/{tradingAccount}', [TradingAccountController::class, 'update'])->name('admin.trading-accounts.update');
         Route::delete('/trading-accounts/{tradingAccount}', [TradingAccountController::class, 'destroy'])->name('admin.trading-accounts.destroy');
         
+        // Approval routes
+        Route::post('/trading-accounts/{tradingAccount}/approve', [TradingAccountController::class, 'approve'])->name('admin.trading-accounts.approve');
+        Route::post('/trading-accounts/{tradingAccount}/reject', [TradingAccountController::class, 'reject'])->name('admin.trading-accounts.reject');
+        
         // Trades management
         Route::get('/trades', [TradeController::class, 'index'])->name('admin.trades.index');
         Route::get('/trades/create', [TradeController::class, 'create'])->name('admin.trades.create');

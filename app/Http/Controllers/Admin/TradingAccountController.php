@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\TradingAccount;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TradingAccountController extends Controller
 {
@@ -95,5 +96,35 @@ class TradingAccountController extends Controller
 
         return redirect()->route('admin.trading-accounts.index')
             ->with('success', 'Trading account deleted successfully.');
+    }
+
+    public function approve(TradingAccount $tradingAccount)
+    {
+        $tradingAccount->update([
+            'status' => 'ACTIVE',
+            'approved_at' => now(),
+            'approved_by' => Auth::user()->id,
+            'is_copy_trading_enabled' => true, // Enable copy trading when approved
+        ]);
+
+        return redirect()->route('admin.trading-accounts.index')
+            ->with('success', 'Trading account approved successfully.');
+    }
+
+    public function reject(Request $request, TradingAccount $tradingAccount)
+    {
+        $request->validate([
+            'rejection_reason' => 'required|string|max:500',
+        ]);
+
+        $tradingAccount->update([
+            'status' => 'INACTIVE',
+            'rejection_reason' => $request->rejection_reason,
+            'rejected_at' => now(),
+            'is_copy_trading_enabled' => false,
+        ]);
+
+        return redirect()->route('admin.trading-accounts.index')
+            ->with('success', 'Trading account rejected successfully.');
     }
 }
