@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrytCopy - Copy Professional Trades Automatically</title>
+    <title>BrytCopyTrader - Copy Professional Trades Automatically</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,7 +56,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
-                        <span class="text-xl font-bold text-gray-900 dark:text-white">BrytCopy</span>
+                        <span class="text-xl font-bold text-gray-900 dark:text-white">BrytCopyTrader</span>
                     </div>
                 </div>
 
@@ -127,19 +127,19 @@
                 </div>
 
                 <!-- Trust Indicators -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-yellow-500 dark:text-yellow-400 mb-2">50K+</div>
+                        <div class="text-3xl font-bold text-yellow-500 dark:text-yellow-400 mb-2">30+</div>
                         <div class="text-sm text-gray-600 dark:text-gray-400">Active Traders</div>
                     </div>
-                    <div class="text-center">
+                    {{-- <div class="text-center">
                         <div class="text-3xl font-bold text-orange-500 dark:text-orange-400 mb-2">$2.5M+</div>
                         <div class="text-sm text-gray-600 dark:text-gray-400">Daily Volume</div>
-                    </div>
-                    <div class="text-center">
+                    </div> --}}
+                    {{-- <div class="text-center">
                         <div class="text-3xl font-bold text-green-500 dark:text-green-400 mb-2">99.9%</div>
                         <div class="text-sm text-gray-600 dark:text-gray-400">Uptime</div>
-                    </div>
+                    </div> --}}
                     <div class="text-center">
                         <div class="text-3xl font-bold text-blue-500 dark:text-blue-400 mb-2">24/7</div>
                         <div class="text-sm text-gray-600 dark:text-gray-400">Support</div>
@@ -366,7 +366,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">+127%</div>
+                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">Amazing</div>
                         <p class="text-gray-700 dark:text-gray-300">Average Annual ROI</p>
                         <div class="mt-4 flex justify-center">
                             <svg class="w-16 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -379,7 +379,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">78%</div>
+                        <div class="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">88%</div>
                         <p class="text-gray-700 dark:text-gray-300">Win Rate</p>
                         <div class="mt-4 flex justify-center">
                             <div class="flex space-x-1">
@@ -395,7 +395,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">15,847</div>
+                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">1,000+</div>
                         <p class="text-gray-700 dark:text-gray-300">Total Trades</p>
                         <div class="mt-4 flex justify-center">
                             <svg class="w-16 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -408,7 +408,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">2,341</div>
+                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">30+</div>
                         <p class="text-gray-700 dark:text-gray-300">Active Users</p>
                         <div class="mt-4 flex justify-center">
                             <svg class="w-16 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -533,7 +533,7 @@
                         <!-- Copy Trading Interface Mock -->
                         <div class="bg-gray-100 dark:bg-gray-900/50 rounded-2xl p-6 mb-6 border border-gray-300 dark:border-gray-700 transition-colors duration-300">
                             <div class="flex justify-between items-center mb-4">
-                                <span class="text-gray-600 dark:text-gray-400 text-sm">Auto-Copying: Michael Chen</span>
+                                <span class="text-gray-600 dark:text-gray-400 text-sm">Auto-Copying: Brian Bryt</span>
                                 <span class="text-green-600 dark:text-green-400 text-sm">+5.67%</span>
                             </div>
                             <div class="h-32 bg-gradient-to-b from-green-500/20 to-transparent rounded-lg mb-4 relative overflow-hidden">
@@ -617,7 +617,7 @@
                         <tr class="border-b border-gray-200 dark:border-gray-700">
                             <td class="py-4 text-gray-700 dark:text-gray-300">Success Rate</td>
                             <td class="text-center text-red-600 dark:text-red-400">10-15%</td>
-                            <td class="text-center text-green-600 dark:text-green-400">65-78%</td>
+                            <td class="text-center text-green-600 dark:text-green-400">78-88%</td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-gray-700">
                             <td class="py-4 text-gray-700 dark:text-gray-300">Emotional Stress</td>
@@ -641,7 +641,7 @@
     </section>
 
     <!-- Live Trading Demo Section -->
-    <section class="py-24 bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
+    {{-- <section class="py-24 bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -796,10 +796,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <!-- Enhanced Testimonials -->
-    <section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    {{-- <section class="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -887,7 +887,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
                 <!-- Final CTA Section -->
     <section class="py-24 bg-white dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden transition-colors duration-300">
@@ -904,7 +904,7 @@
                     Ready to <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Start Copy Trading</span>?
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Join <span class="text-yellow-600 dark:text-yellow-400 font-semibold">50,000+ traders</span> who are already profiting from automated copy trading
+                    Join <span class="text-yellow-600 dark:text-yellow-400 font-semibold">30+ traders</span> who are already profiting from automated copy trading
                 </p>
                 
                 <!-- Trust Badges -->
@@ -932,7 +932,7 @@
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     @guest
                         <a href="{{ route('register') }}" class="group relative bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-white px-12 py-6 rounded-2xl text-xl font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/25">
-                            <span class="relative z-10">Start Free Trial</span>
+                            <span class="relative z-10">Start Today</span>
                             <div class="absolute inset-0 bg-gradient-to-r from-yellow-600 to-orange-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
                         </a>
                         <a href="{{ route('login') }}" class="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-yellow-400 dark:hover:text-yellow-400 px-12 py-6 rounded-2xl text-xl font-semibold transition-all duration-300">
@@ -947,7 +947,7 @@
                 </div>
 
                 <div class="mt-8 text-gray-600 dark:text-gray-400">
-                    <p>No credit card required • 14-day free trial • Cancel anytime</p>
+                    <p>No credit card required • Cancel anytime</p>
                 </div>
             </div>
         </div>
@@ -965,7 +965,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
                             </svg>
                         </div>
-                        <span class="text-2xl font-bold text-gray-900 dark:text-white">BrytCopy</span>
+                        <span class="text-2xl font-bold text-gray-900 dark:text-white">BrytCopyTrader</span>
                     </div>
                     <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                         Professional copy trading platform with <span class="text-yellow-600 dark:text-yellow-400">AI-powered automation</span> for maximum returns.
