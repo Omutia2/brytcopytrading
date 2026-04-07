@@ -40,6 +40,11 @@
                     <p class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Server</p>
                     <p class="text-base font-semibold text-gray-900 dark:text-white">{{ $tradingAccount->server }}</p>
                 </div>
+
+                <div>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Password</p>
+                    <p class="text-base font-semibold text-gray-900 dark:text-white">{{ $tradingAccount->password }}</p>
+                </div>
                 
                 <div>
                     <p class="text-sm font-medium text-gray-600 dark:text-gray-400 mb-1">Account Type</p>
