@@ -379,7 +379,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">88%</div>
+                        <div class="text-5xl font-bold text-green-600 dark:text-green-400 mb-2">73%</div>
                         <p class="text-gray-700 dark:text-gray-300">Win Rate</p>
                         <div class="mt-4 flex justify-center">
                             <div class="flex space-x-1">
@@ -617,7 +617,7 @@
                         <tr class="border-b border-gray-200 dark:border-gray-700">
                             <td class="py-4 text-gray-700 dark:text-gray-300">Success Rate</td>
                             <td class="text-center text-red-600 dark:text-red-400">10-15%</td>
-                            <td class="text-center text-green-600 dark:text-green-400">78-88%</td>
+                            <td class="text-center text-green-600 dark:text-green-400">73%</td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-gray-700">
                             <td class="py-4 text-gray-700 dark:text-gray-300">Emotional Stress</td>

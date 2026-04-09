@@ -26,5 +26,10 @@
                 @yield('content')
             </div>
         </div>
+        
+        <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/256752525709" class="whatsapp-float" target="_blank" style="position: fixed; bottom: 50px; right: 20px; background-color: #25d3b3; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 1000; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+      <i class="fa fa-whatsapp"></i>
+    </a>
     </body>
 </html>
