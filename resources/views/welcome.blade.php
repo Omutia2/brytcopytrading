@@ -409,7 +409,7 @@
                 <div class="group relative bg-gray-50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-200 dark:border-gray-700/50 hover:border-yellow-400/30 transition-all duration-300 hover:transform hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-orange-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative z-10 text-center">
-                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">30+</div>
+                        <div class="text-5xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">73+</div>
                         <p class="text-gray-700 dark:text-gray-300">Active Users</p>
                         <div class="mt-4 flex justify-center">
                             <svg class="w-16 h-8 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
