@@ -245,14 +245,26 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
-
-            <x-primary-button class="ms-4">
-                {{ __('Register') }}
-            </x-primary-button>
+        <!-- Terms and Conditions -->
+        <div class="mt-4">
+            <div class="flex items-center">
+                <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+                <label for="terms" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
+                    I agree to the <a href="#" class="text-indigo-600 hover:text-indigo-500 underline">Terms and Conditions</a>
+                </label>
+            </div>
+            <x-input-error :messages="$errors->get('terms')" class="mt-2" />
         </div>
+
+        <x-primary-button class="mt-2 w-full" style="display: flex; justify-content: center; align-items: center;">
+            {{ __('Register') }}
+        </x-primary-button>
+
+        <div class="flex items-center justify-between mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                {{ __('Already have an account? Login') }}
+            </a>
+        </div>
+        
     </form>
 @endsection

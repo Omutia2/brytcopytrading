@@ -997,15 +997,15 @@
                     </div>
                 </div>
 
-                <!-- Product -->
-                {{-- <div>
-                    <h4 class="text-gray-900 dark:text-white font-semibold mb-6">Product</h4>
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-gray-900 dark:text-white font-semibold mb-6">Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Features</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Pricing Plans</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Security</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">API Documentation</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Mobile App</a></li>
+                        <li><a href="{{ route('legal.privacy-agreement') }}" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Privacy Agreement</a></li>
+                        <li><a href="{{ route('legal.risk-disclosure') }}" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Risk Disclosure</a></li>
+                        <li><a href="{{ route('legal.preventing-money-laundering') }}" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Anti-Money Laundering</a></li>
+                        <li><a href="{{ route('legal.security-instructions') }}" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Security Instructions</a></li>
+                        <li><a href="{{ route('legal.complaints-handling-policy') }}" class="text-gray-600 dark:text-gray-400 hover:text-yellow-500 dark:hover:text-yellow-400 transition-colors">Complaints Policy</a></li>
                     </ul>
                 </div>
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LegalPagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\SubscriptionController;
@@ -10,7 +11,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+// Legal pages routes
+Route::get('/legal/privacy-agreement', [LegalPagesController::class, 'privacyAgreement'])->name('legal.privacy-agreement');
+Route::get('/legal/risk-disclosure', [LegalPagesController::class, 'riskDisclosure'])->name('legal.risk-disclosure');
+Route::get('/legal/preventing-money-laundering', [LegalPagesController::class, 'preventingMoneyLaundering'])->name('legal.preventing-money-laundering');
+Route::get('/legal/security-instructions', [LegalPagesController::class, 'securityInstructions'])->name('legal.security-instructions');
+Route::get('/legal/legal-documents', [LegalPagesController::class, 'legalDocuments'])->name('legal.legal-documents');
+Route::get('/legal/complaints-handling-policy', [LegalPagesController::class, 'complaintsHandlingPolicy'])->name('legal.complaints-handling-policy');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

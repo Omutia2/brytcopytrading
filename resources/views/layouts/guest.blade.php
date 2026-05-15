@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'Bryt Copy Trading') }}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,9 +17,21 @@
     <body class="font-sans antialiased bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white transition-colors duration-300">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
             <div>
-                <a href="/">
+                {{-- <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
+                </a> --}}
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <div class="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg shadow-orange-500/30 transform group-hover:scale-110 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-xl"></div>
+                        <svg class="relative w-5 h-5 sm:w-6 sm:h-6 text-white transform group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent hidden sm:block">BrytCopyTrading</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 hidden sm:block">Professional Copy Trading</span>
+                    </div>
+                </div>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
