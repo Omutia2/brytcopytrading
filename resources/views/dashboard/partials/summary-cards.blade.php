@@ -13,10 +13,10 @@
                 </svg>
             </div>
         </div>
-        <div class="mt-3 sm:mt-4">
+        {{-- <div class="mt-3 sm:mt-4">
             <span class="text-primary-600 dark:text-primary-400 text-xs sm:text-sm font-medium">+12.5%</span>
             <span class="text-gray-500 dark:text-gray-400 text-xs">from last month</span>
-        </div>
+        </div> --}}
     </div>
 
     <!-- Active Trades Card -->
@@ -33,8 +33,8 @@
             </div>
         </div>
         <div class="mt-3 sm:mt-4">
-            <span class="text-green-600 dark:text-green-400 text-xs sm:text-sm font-medium">+2 today</span>
-            <span class="text-gray-500 dark:text-gray-400 text-xs">from this session</span>
+            {{-- <span class="text-green-600 dark:text-green-400 text-xs sm:text-sm font-medium">+2 today</span> --}}
+            {{-- <span class="text-gray-500 dark:text-gray-400 text-xs">from this session</span> --}}
         </div>
     </div>
 
@@ -52,13 +52,13 @@
             </div>
         </div>
         <div class="mt-3 sm:mt-4">
-            <span class="text-accent-600 dark:text-accent-400 text-xs sm:text-sm font-medium">+8.3%</span>
-            <span class="text-gray-500 dark:text-gray-400 text-xs">performance</span>
+            {{-- <span class="text-accent-600 dark:text-accent-400 text-xs sm:text-sm font-medium">+8.3%</span> --}}
+            {{-- <span class="text-gray-500 dark:text-gray-400 text-xs">performance</span> --}}
         </div>
     </div>
 
     <!-- Subscription Status Card -->
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow">
+    {{-- <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-4 sm:p-6 hover:shadow-md transition-shadow">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between space-y-3 sm:space-y-0">
             <div>
                 <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400">Subscription Status</p>
@@ -74,5 +74,5 @@
             <span class="text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-medium">Active</span>
             <span class="text-gray-500 dark:text-gray-400 text-xs">since {{ auth()->user()->created_at->diffForHumans() }}</span>
         </div>
-    </div>
+    </div> --}}
 </div>
