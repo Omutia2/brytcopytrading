@@ -131,6 +131,13 @@
                         </table>
                     </div>
                 </div>
+
+                <!-- Pagination -->
+                @if ($trades->hasPages())
+                    <div class="mt-6 flex justify-center">
+                        {{ $trades->links() }}
+                    </div>
+                @endif
             </div>
         </main>
 

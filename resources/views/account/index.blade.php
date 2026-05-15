@@ -10,9 +10,14 @@
                         <h1 class="text-3xl font-bold text-gray-900 dark:text-white">My Account</h1>
                         <p class="text-gray-600 dark:text-gray-300 mt-2">Manage your trading accounts</p>
                     </div>
-                    <button onclick="document.getElementById('addAccountModal').classList.remove('hidden')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
-                        Add Account
-                    </button>
+                    <div class="flex space-x-3">
+                        <a href="https://elitemarketholdings.com" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                            Recommended Broker
+                        </a>
+                        <button onclick="document.getElementById('addAccountModal').classList.remove('hidden')" class="bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg font-medium transition-colors">
+                            Add Account
+                        </button>
+                    </div>
                 </div>
 
                 <!-- Success and Error Messages -->

@@ -14,7 +14,7 @@ class TradeController extends Controller
         $trades = Trade::with('tradingAccount')
             ->where('user_id', Auth::user()->id)
             ->orderBy('opened_at', 'desc')
-            ->get();
+            ->paginate(50);
         
         $tradingAccounts = TradingAccount::where('user_id', Auth::user()->id)->get();
         
